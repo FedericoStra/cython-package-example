@@ -6,6 +6,7 @@ import os.path
 import os
 
 
+# https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#distributing-cython-modules
 def no_cythonize(extensions, **_ignore):
     for extension in extensions:
         sources = []
@@ -48,6 +49,7 @@ with open("requirements-dev.txt") as fp:
 with open("README.md") as fp:
     long_description = fp.read()
 
+
 setup(
     name="cython-package-example",
     version="0.1.1",
@@ -67,4 +69,24 @@ setup(
     python_requires=">=3.4",
     # setup_requires=["Cython >= 0.29"],
     extras_require={"dev": dev_requires, "docs": ["sphinx", "sphinx-rtd-theme"]},
+    classifiers=[
+        "Development Status :: 1 - Planning",
+        "License :: OSI Approved :: MIT License",
+        "Intended Audience :: Education",
+        "Intended Audience :: Science/Research",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Scientific/Engineering :: Mathematics",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: C",
+        "Programming Language :: Cython",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: Implementation :: CPython",
+    ],
 )
