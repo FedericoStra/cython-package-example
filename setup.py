@@ -51,7 +51,7 @@ with open("README.md") as fp:
 
 setup(
     name="cython-package-example",
-    version="0.1.0",
+    version="0.1.1",
     description="Example of a package with Cython extensions",
     long_description=long_description,
     long_description_content_type="text/markdown",
