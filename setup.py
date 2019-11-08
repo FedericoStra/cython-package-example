@@ -46,47 +46,8 @@ with open("requirements.txt") as fp:
 with open("requirements-dev.txt") as fp:
     dev_requires = fp.read().strip().split("\n")
 
-with open("README.md") as fp:
-    long_description = fp.read()
-
-
 setup(
-    name="cython-package-example",
-    version="0.1.2",
-    description="Example of a package with Cython extensions",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    license="MIT",
-    author="Federico Stra",
-    author_email="stra.federico@gmail.com",
-    url="",
-    project_urls={"Documentation": "", "Code": "", "Issue tracker": ""},
-    packages=find_packages("src"),
-    package_dir={"": "src"},
-    package_data={"": ["*.pxd", "*.h"], "cypack": ["data/*"]},
     ext_modules=extensions,
-    zip_safe=False,
-    python_requires=">=3.4",
-    # setup_requires=["Cython >= 0.29"],
+    install_requires=install_requires,
     extras_require={"dev": dev_requires, "docs": ["sphinx", "sphinx-rtd-theme"]},
-    classifiers=[
-        "Development Status :: 1 - Planning",
-        "License :: OSI Approved :: MIT License",
-        "Intended Audience :: Education",
-        "Intended Audience :: Science/Research",
-        "Topic :: Scientific/Engineering",
-        "Topic :: Scientific/Engineering :: Mathematics",
-        "Natural Language :: English",
-        "Operating System :: OS Independent",
-        "Programming Language :: C",
-        "Programming Language :: Cython",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: Implementation :: CPython",
-    ],
 )
