@@ -1,16 +1,18 @@
-.PHONY: build dist install install-from-source clean
+.PHONY: build dist redist install install-from-source clean
 
 build:
-	USE_CYTHON=1 ./setup.py build
+	CYTHONIZE=1 ./setup.py build
 
 dist:
-	USE_CYTHON=1 ./setup.py sdist bdist_wheel
+	CYTHONIZE=1 ./setup.py sdist bdist_wheel
+
+redist: clean dist
 
 install:
-	USE_CYTHON=1 pip install --user .
+	CYTHONIZE=1 pip install --user .
 
 install-from-source: dist
-	pip install --user dist/cython-package-example-0.1.0.tar.gz
+	pip install --user dist/cython-package-example-0.1.1.tar.gz
 
 clean:
 	$(RM) -r build dist

@@ -30,12 +30,11 @@ extensions = [
     ),
 ]
 
-USE_CYTHON = bool(int(os.getenv("USE_CYTHON", 0)))
+CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0)))
 
-if USE_CYTHON:
-    extensions = cythonize(
-        extensions, compiler_directives={"language_level": 3, "embedsignature": True}
-    )
+if CYTHONIZE:
+    compiler_directives = {"language_level": 3, "embedsignature": True}
+    extensions = cythonize(extensions, compiler_directives=compiler_directives)
 else:
     extensions = no_cythonize(extensions)
 
