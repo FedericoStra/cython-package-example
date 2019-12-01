@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
+import os
 from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
-import os
 
 
 # https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#distributing-cython-modules
@@ -23,10 +23,12 @@ def no_cythonize(extensions, **_ignore):
 
 
 extensions = [
-    Extension("cypack.answer", ["src/cypack/answer.pyx"]),
     Extension("cypack.utils", ["src/cypack/utils.pyx"]),
+    Extension("cypack.answer", ["src/cypack/answer.pyx"]),
+    Extension("cypack.fibonacci", ["src/cypack/fibonacci.pyx"]),
     Extension(
-        "cypack.sub.wrong", ["src/cypack/sub/wrong.pyx", "src/cypack/sub/helper.c"]
+        "cypack.sub.wrong",
+        ["src/cypack/sub/wrong.pyx", "src/cypack/sub/helper.c"]
     ),
 ]
 
@@ -38,7 +40,6 @@ if CYTHONIZE:
 else:
     extensions = no_cythonize(extensions)
 
-
 with open("requirements.txt") as fp:
     install_requires = fp.read().strip().split("\n")
 
@@ -48,5 +49,8 @@ with open("requirements-dev.txt") as fp:
 setup(
     ext_modules=extensions,
     install_requires=install_requires,
-    extras_require={"dev": dev_requires, "docs": ["sphinx", "sphinx-rtd-theme"]},
+    extras_require={
+        "dev": dev_requires,
+        "docs": ["sphinx", "sphinx-rtd-theme"]
+    },
 )

@@ -16,7 +16,7 @@ install-from-source: dist
 
 clean:
 	$(RM) -r build dist
-	$(RM) -r src/cypack/{utils.c,answer.c} src/cypack/sub/wrong.c
+	$(RM) -r src/cypack/{utils.c,answer.c,fibonacci.c} src/cypack/sub/wrong.c
 	git clean -fdX
 
 uninstall:
