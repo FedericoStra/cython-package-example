@@ -2,7 +2,6 @@
 
 from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
-import os.path
 import os
 
 
