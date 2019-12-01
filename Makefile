@@ -12,7 +12,7 @@ install:
 	CYTHONIZE=1 pip install --user .
 
 install-from-source: dist
-	pip install --user dist/cython-package-example-0.1.3.tar.gz
+	pip install --user dist/cython-package-example-0.1.4.tar.gz
 
 clean:
 	$(RM) -r build dist
