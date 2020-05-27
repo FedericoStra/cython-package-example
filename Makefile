@@ -17,6 +17,7 @@ install-from-source: dist
 clean:
 	$(RM) -r build dist
 	$(RM) -r src/cypack/{utils.c,answer.c,fibonacci.c} src/cypack/sub/wrong.c
+	$(RM) -r src/*.egg-info
 	#git clean -fdX
 
 uninstall:
