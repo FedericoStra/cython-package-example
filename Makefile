@@ -15,9 +15,10 @@ install-from-source: dist
 	pip install dist/cython-package-example-0.1.5.tar.gz
 
 clean:
-	$(RM) -r build dist
+	$(RM) -r build dist src/*.egg-info
 	$(RM) -r src/cypack/{utils.c,answer.c,fibonacci.c} src/cypack/sub/wrong.c
-	$(RM) -r src/*.egg-info
+	$(RM) -r .pytest_cache
+	find . -name __pycache__ -exec rm -r {} +
 	#git clean -fdX
 
 uninstall:
