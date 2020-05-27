@@ -2,7 +2,11 @@
 
 import os
 from setuptools import setup, find_packages, Extension
-from Cython.Build import cythonize
+
+try:
+    from Cython.Build import cythonize
+except ImportError:
+    cythonize = None
 
 
 # https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#distributing-cython-modules
@@ -32,7 +36,7 @@ extensions = [
     ),
 ]
 
-CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0)))
+CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0))) and cythonize is not None
 
 if CYTHONIZE:
     compiler_directives = {"language_level": 3, "embedsignature": True}
