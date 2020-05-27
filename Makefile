@@ -9,15 +9,15 @@ dist:
 redist: clean dist
 
 install:
-	CYTHONIZE=1 pip install --user .
+	CYTHONIZE=1 pip install .
 
 install-from-source: dist
-	pip install --user dist/cython-package-example-0.1.4.tar.gz
+	pip install dist/cython-package-example-0.1.4.tar.gz
 
 clean:
 	$(RM) -r build dist
 	$(RM) -r src/cypack/{utils.c,answer.c,fibonacci.c} src/cypack/sub/wrong.c
-	git clean -fdX
+	#git clean -fdX
 
 uninstall:
 	pip uninstall cython-package-example
