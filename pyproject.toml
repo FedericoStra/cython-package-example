@@ -27,6 +27,7 @@ numpy = "^1.21"
 [tool.poetry.dev-dependencies]
 Cython = "^0.29.27"
 pytest = "^7.0.0"
+flake8 = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "Cython>=0.29.27", "setuptools>=60.8.1"]
