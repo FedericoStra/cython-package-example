@@ -17,7 +17,7 @@ make install
 ```
 or
 ```bash
-USE_CYTHON=1 pip install --user .
+CYTHONIZE=1 pip install --user .
 ```
 
 ### From PyPi
