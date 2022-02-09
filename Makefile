@@ -12,7 +12,7 @@ install:
 	CYTHONIZE=1 pip install .
 
 install-from-source: dist
-	pip install dist/cython-package-example-0.1.5-poetry.tar.gz
+	pip install dist/cython-package-example-0.2.0-poetry.tar.gz
 
 clean:
 	$(RM) -r build dist src/*.egg-info
