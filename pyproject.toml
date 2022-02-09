@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cython-package-example"
-version = "0.1.5"
+version = "0.1.5-poetry"
 description = "Example of a package with Cython extensions"
 authors = ["Federico Stra <stra.federico@gmail.com>"]
 license = "MIT"
