@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import os
-from setuptools import setup, find_packages, Extension
+from setuptools import setup, Extension
 
 try:
     from Cython.Build import cythonize
