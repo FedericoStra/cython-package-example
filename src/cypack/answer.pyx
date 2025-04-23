@@ -1,6 +1,6 @@
 from .utils cimport axpy
 
-import pkg_resources
+import importlib.resources
 import hashlib
 
 cpdef the_answer():
@@ -9,5 +9,5 @@ cpdef the_answer():
 
 
 def zen_hash():
-    zen = pkg_resources.resource_string("cypack", "data/zen.txt")
+    zen = importlib.resources.read_binary("cypack.data", "zen.txt")
     return hashlib.md5(zen).hexdigest()
