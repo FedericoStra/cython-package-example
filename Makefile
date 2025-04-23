@@ -12,7 +12,7 @@ install:
 	CYTHONIZE=1 pip install .
 
 install-from-source: dist
-	pip install dist/cython_package_example-0.1.6.tar.gz
+	pip install dist/cython_package_example-0.1.7.tar.gz
 
 clean:
 	$(RM) -r build dist src/*.egg-info
